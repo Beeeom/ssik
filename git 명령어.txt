@@ -1,0 +1,41 @@
+
+배쉬
+git config --global gui.encoding utf-8//한글폰트 가능
+git config --global user.email 이메일
+git config --global user.name "이름"
+
+git init //저장소 생성
+shift + insert //붙여넣기
+git clone 주소 //주소 클론, 주소를 origin으로 자동변환
+git remote add origin 주소 //주소를 origin으로 변환
+
+git branch 브랜치 //브랜치 등록
+git branch //등록된 브랜치 확인
+git branch -al //모든 브랜치 확인
+git checkout 브랜치 //선택한 브랜치로 메인 변경
+git branch -d 브랜치 //브랜치 삭제
+git push -d origin 브랜치 //브랜치 삭제를 깃허브에 반영
+
+git pull 주소 브랜치 //주소 및 브랜치 당기기
+git merge 브랜치 //해당 브랜치를 현재 브랜치에 병합
+
+git add . //변경사항 추가
+git commit -m "1" //커밋
+git push 주소 브랜치 //푸쉬
+
+git status //상태 확인
+git log //로그 확인
+q //로그 확인 후 돌아오기
+:q //오류시 돌아오기
+
+git revert 로그의커밋 //해당 커밋만 취소
+git reset --hard HEAD~ //1회 취소
+git reset 로그의커밋 //해당 커밋까지 취소
+
+
+
+구이
+스캔 > 체인지 > 커밋 > 푸쉬
+리셋 > 하드
+
+깃허브 md 꾸미기
