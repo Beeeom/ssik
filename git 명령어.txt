@@ -39,3 +39,15 @@ git reset 로그의커밋 //해당 커밋까지 취소
 리셋 > 하드
 
 깃허브 md 꾸미기
+
+원하는 폴더만 당겨오는방법.
+
+git init
+
+git config core.sparsecheckout true
+
+git remote  add -f origin 원하는 주소
+
+echo 대상폴더/* > .git/info/sparse-checkout
+
+git pull origin main
