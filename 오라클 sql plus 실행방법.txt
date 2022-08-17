@@ -26,3 +26,9 @@ grant connect, resource to c##scott;
 -- 유저에 대해서 용량 제한을 풀은 것
 -- 이거 안 하면 제대로된 crud를 할 수 없다.
 ALTER USER c##scott DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+
+sqldeveloper-22.2.0.173.2018-x64.zip
+
+OracleXE213_Win64 (1).zip 
+ 
+ 두가지 파일 받아서 
