@@ -1,0 +1,248 @@
+01
+ 데이터 -- 수집한 값이나 수치
+ 데이터베이스 -- 수집한 데이터를 효율적으로 저장하는 것
+ 정보 -- 필요에 따라 데이터를 의미있게 사용할 수 있도록 처리한 결과물
+ SQL -- 기본키, 외래키를 활용해서 데이터베이스의 데이터를 생성, 읽기, 수정, 제거
+
+ 오라클 데이터베이스 -- 다운 및 설치+ SQL Plus+ system+ 비밀번호+ create user c##scott identified by tiger;(계정명 스캇, 비밀번호 타이거 생성)+ grant connect, resource to c##scott;(권한 부여)+ alter user c##scott default tablespace users quota unlimited on users;(사용자 변경)
+
+ 오라클 SQL -- 새 접속+ Name(scott) 이름(c##scott) 비밀번호, 비밀번호저장, 저장, 접속
+ scott+ 테이블+ 새 테이블+ 이름+ 열 추가+ PK(널이 아님)+ 이름+ 유형+ 크기+ 확인
+ 테이블+ 행 삽입+ 행 삭제+ 변경사항 커밋
+ scott+ 워크시트 작성+ 컨*엔터(선택된 줄 실행)
+
+ SQL -- Structured Query Language, 구조화 질의 언어
+ Query문 -- 질의문
+ SQL의 핵심 -- CRUD
+ select = read -- 조회
+ insert = create -- 삽입
+ update = updtae -- 수정
+ delete = delete -- 삭제
+ /**/ -- 주석
+ = -- 같다
+ 오라클은 한글이 3바이트
+ commit; -- 저장(git의 commit과 유사)
+ rollback; -- 마지막으로 commit한 지점으로 돌아갈 수 있음
+
+ SELECT * FROM STUDENT; -- 테이블 모두 조회
+ SELECT * FROM STUDENT WHERE AGE>25 AND HAKBEON='3'; -- where 이후 조건
+ INSERT INTO STUDENT (HAKBEON, NAME, AGE) VALUES ('1','장태연',34); -- VALUES 이후 값, 괄호 안에 있는 건 컬럼명(=열) 순서대로 데이터를 넣는다면 컬럼명 생략 가능, 문자열은 따옴표 안에 작성
+ UPDATE STUDENT SET NAME='장태연' WHERE HAKBEON='4'; -- 수정
+ DELETE FROM STUDENT WHERE name='장태연'; -- 삭제
+ DELETE FROM 테이블명; -- 모두 삭제
+
+
+
+ 02
+ 테이블 백업 -- 익스포트+ 다음+ 다음+ 완료+ 코드 전체 복사
+ 테이블 복원 -- 워크시트에 코드 전체 붙여넣기+ 전체 실행
+ 계정 백업 -- cmd+ 저장할 위치+ exp c##scott/tiger file=저장파일명.dmp (계정명, 비밀번호)
+ 계정 복원 -- cmd+ 백업파일 위치+ imp c##scott/tiger file=저장파일명.dmp full=y
+
+ create database 데이터베이스명; -- 데이터베이스 생성
+ use 데이터베이스명; -- 데이터베이스 사용
+
+ create table 테이블명 (컬럼명 데이터타입 제약조건); -- 테이블 생성
+ create table student (hakbeon varchar2(20) primary key);
+ truncate table 테이블명; -- 데이터 삭제
+ drop table 테이블명; -- 데이터, 테이블 삭제
+ drop table 테이블명 cascade constraints; -- 데이터, 테이블, 제약조건 삭제
+
+ 출력방식 변경
+ select name as 이름 from student; -- name을 이름으로 변경하여 출력
+ select name as "이 름" from student;
+ select name 이름 from student;
+ select name "이 름" from student;
+
+ 테이블+ 모델 -- 이미지화
+ 자동완성 -- 도구+ 환경설정+ 코드편집기+ 완성인사이트+ SQL완성자동팝업
+
+ 기본키 -- 유일한 속성, 동일한 값 중복 불가, null 불가능
+ 외래키 -- 다른 테이블의 값을 참조하는 키
+ unique -- 유일한 속성, 동일한 값 중복 불가, null 가능
+ char -- 크기 고정, 반드시 크기에 맞게 입력, 무조건 해당 크기만큼 바이트 할당
+ varchar2 -- 크기 유동, 해당 크기만큼 바이트 할당, 크기를 계산하기 때문에 char 보다 느림
+ join -- 다른 테이블의 값을 참조하여 출력
+
+ alter table student add (code char(3)); -- 테이블에 열 추가
+ alter table student add constraint fk_stu foreign key(code) references major(code); -- 외래키를 추가하고 다른 테이블을 참조
+ create table singer (id number primary key, name varchar2(10), hit_song_id number, foreign key(hit_song_id) references song(i_d)); -- 생성과 동시에 외래키 참조
+
+ select student.name "학생명", major.name "학과명", hakbeon from student join major on student.code=major.code; -- 외래키를 사용하여 출력, select 테이블명.컬럼명 "출력명" from 테이블명 join 참조테이블명 on 테이블명.컬럼명=참조테이블명.컬럼명
+
+ select name, title from singer join song on singer.hit_song_id=song.id; -- 참조하여 출력
+ join 앞에 right 넣으면 maint을 기준으로 null인 값도 출력
+ join 앞에 left 넣으면 참조를 기준으로 null인 값도 출력
+
+ where name like '%1%2%'; -- 문자열 검색
+ where name like '%1%2%' or name like '%2%3%'; -- 다중 문자열 검색
+ where name like '___2_'; -- 자릿수 문자열 검색
+ where name not like '%1%2%'; -- 제외하고 문자열 검색
+
+ 시퀀스 -- 값 순차적 증가
+ create sequence numup;
+ insert into song values (numup.nextval, 'songname1', 100); -- 값 순차적 증가
+ insert into singer(id,name) values(numup.nextval, 'john'); --원하는 값만 입력
+
+
+
+ 03
+ 정렬
+ select * from 테이블명 order by 컬럼명 asc; -- 오름차순, 생략가능
+ select * from 테이블명 order by 컬럼명 desc; -- 내림차순
+ set autocommit on; -- 자동커밋기능 켜기, off는 끄기
+ show autocommit; -- 현재 상태 확인
+
+ int -- integer
+ number -- 부동소수점과 고정소수점 지정 가능
+
+ select max(컬럼명) from 테이블명; -- 최고값
+ select avg(컬럼명) from 테이블명; -- 평균값
+ select 컬럼명, avg(컬럼명) from 테이블명 group by 컬럼명; -- 컬럼별 평균값
+ select 컬럼명, avg(컬럼명) from 테이블명 group by 컬럼명 having avg(컬럼명)>30; -- 조건에 맞는 컬럼별 평균값
+ select 테이블명.컬럼명, 표시명 from 테이블명 join (select 컬럼명, avg(컬럼명) 표시명 from 테이블명 group by 컬럼명) on 테이블명.컬럼명=a.컬럼명; -- 컬럼별 평균값을 셀프 조인
+
+ 셀프 조인 -- 스스로를 참조
+ drop sequence numup; -- 시퀀스 삭제
+ create sequence numup; -- 시퀀스 생성
+ drop table mysam;
+ create table mysam (id number primary key, name varchar2(30) not null, king number); -- not null은 공백 없음
+ insert into mysam values (numup.nextval,'이건희',1);
+ insert into mysam values (numup.nextval,'홍라희',2);
+ insert into mysam values (numup.nextval,'이부진',4);
+ alter table mysam rename column king to boss; -- 컬럼명 변경
+ select a.name name, b.name boss from mysam a left join mysam b on a.id=b.boss; -- 셀프 조인 및 left 조인
+
+
+
+--01
+drop table jstudent;
+drop table jhakgwa;
+create table jhakgwa (code char(3) primary key, name varchar2(30));
+create table jstudent (hakbeon varchar2(30) primary key, name varchar2(60), age int, code char(3), foreign key(code) references jhakgwa(code));
+
+insert into jhakgwa values (001, '아동가족학과');
+insert into jhakgwa values (002, '심리상담학과');
+insert into jstudent values (1, '살어리', 21, 001);
+insert into jstudent values (2, '살어리', 22, 002);
+insert into jstudent values (3, '랐다', 23, 001);
+insert into jstudent values (4, '청산에', 24, 002);
+insert into jstudent values (5, '살어리랐다', 25, null);
+
+select jstudent.name, jhakgwa.name from jstudent left join jhakgwa on jstudent.code=jhakgwa.code;
+
+
+
+--02
+drop table kbst;
+drop table kbmajor;
+create table kbmajor (name varchar2(30), code char(3) primary key, time varchar2(20));
+create table kbst (name varchar2(30), age char(2), stcode char(10) primary key, macode char(3), time varchar2(20), foreign key(macode) references kbmajor(code));
+
+insert into kbmajor values ('정보기술개발학과', 001, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbmajor values ('감귤포장학과', 002, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('한산섬', 21, 1234567890, 001, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('달밝은', 22, 1234567891, 002, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('밤에', 23, 1234567892, 001, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+
+select kbst.name 이름, stcode 학번, kbmajor.name from kbst left join kbmajor on macode=code;
+select kbst.name "이 름", stcode "학 번", kbmajor.name from kbst left join kbmajor on macode=code where macode=001;
+
+--중첩질의
+insert into kbmajor values ('중요한과', 003, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('수루에', 24, 1234567893, 001, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('홀로', 25, 1234567894, 002, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('앉아', 40, 1234567895, 003, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into kbst values ('큰칼', 35, 1234567896, 001, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+
+select kbst.name, kbmajor.name, age from kbst join kbmajor on kbst.macode=kbmajor.code; -- 이름, 학과, 나이 출력
+
+drop view age_by_kbst;
+create view age_by_kbst as select kbmajor.name, age from kbst join kbmajor on kbst.macode=kbmajor.code;
+select*from age_by_kbst; -- 학과, 나이 출력
+select name, avg(age) from age_by_kbst group by name; -- 학과, 평균나이 출력
+
+drop view avg_age_gwa;
+create view avg_age_gwa as select name, avg(age) avgage from age_by_kbst group by name;
+select*from avg_age_gwa;
+
+select max(avgage) from avg_age_gwa; -- 가장 많은 평균나이 출력
+select name from avg_age_gwa where avgage=(select max(avgage) from avg_age_gwa); -- 가장 많은 평균나이의 학과 출력
+
+
+
+--03
+drop sequence num;
+drop table borders;
+drop table book;
+drop table bcustomer;
+create sequence num;
+create table bcustomer (custid int primary key, cusname varchar2(40), address varchar2(50), phone varchar2(20));
+create table book (id int primary key, name varchar2(40), publisher varchar2(40), price int, foreign key(id) references bcustomer(custid));
+create table borders (orderid int primary key, custid int, bookid int, saleprice int, orderdate varchar2(20), foreign key(custid) references bcustomer(custid), foreign key(bookid) references book(id));
+
+insert into bcustomer values (1, '박지성', '영국 맨체스타', '000-5000-0001');
+insert into bcustomer values (2, '김연아', '대한민국 서울', '000-6000-0001');
+insert into book values (1, '축구의 역사', '굿스포츠', 7000);
+insert into book values (2, '축구 아는 여자', '나무수', 13000);
+insert into borders values (num.nextval, 1, 2, null, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+insert into borders values (num.nextval, 2, 1, null, to_char(sysdate,'yyyy.mm.dd hh24:mi'));
+
+select orderid, cusname, name, saleprice, orderdate from borders join bcustomer on borders.custid=bcustomer.custid join book on bookid=id;
+
+
+
+ 중첩질의
+ SQL Plus+ system+ 비밀번호+ grant create view to c##scott; -- 계정에 뷰(가상 테이블) 생성 권한 부여, 뷰는 중첩질의 등을 위해 필요
+
+ select * from mydbstudent;
+ select * from mydbstudent where age = (select max(age) from mydbstudent);
+ select mydbhakgwa.name, avgage from mydbhakgwa join (select hakgwacode, avg(age) avgage from mydbstudent group by hakgwacode) a on mydbhakgwa.code = a.hakgwacode; -- 길어서 요약 위해 뷰 사용
+
+ create view max_age as (select max(age) maxAge from mydbstudent);
+ select * from max_age; -- 뷰 생성
+ select * from mydbstudent where age=(select * from max_age);
+
+ create view max_age_student as select * from mydbstudent where age=(select * from max_age);
+ select mydbhakgwa.name from max_age_student join mydbhakgwa on max_age_student.hakgwacode = mydbhakgwa.code;
+
+
+
+ dual -- 더미 데이터, SQL에서의 함수 기능 테스트 할 때 사용
+ select * from dual;
+ select lengthb('장') from dual; -- 바이트 크기 체크
+ select length('장') from dual; -- 문자열 길이 체크
+
+
+
+ 04
+--01
+drop table food;
+drop sequence up;
+create sequence up;
+create table food(num int primary key, name varchar2(30), price int);
+
+insert into food(num,name,price) values(up.nextval,'불고기',1000);
+insert into food(num,name,price) values(up.nextval,'김치찌개',3000);
+insert into food(num,name,price) values(up.nextval,'된장찌개',2000);
+insert into food(num,name,price) values(up.nextval,'비빔밥',4000);
+insert into food(num,name) values(up.nextval,'김치매운탕');
+
+select*from food;
+select * from food order by price;
+select * from food order by price desc;
+
+select*from food where name like '%김치%';
+
+select*from food where price>=2000 and price<=3000;
+
+update food set price=1000 where price is null;
+select*from food;
+
+update food set name='맛있는 불고기' where num=1;
+select*from food;
+commit;
+
+
+
+--02
