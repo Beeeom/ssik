@@ -1,4 +1,0 @@
-오라클에 자세한 설명 필요한 자세한 설명!
-https://docs.oracle.com/en/
-라이브 코딩
-https://livesql.oracle.com/apex/f?p=590:1000
