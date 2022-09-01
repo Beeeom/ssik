@@ -1,0 +1,7 @@
+OracleXE213_Win64.zip
+
+오라클 
+
+sqldeveloper-22.2.0.173.2018-x64.zip
+
+sql디벨로퍼 
