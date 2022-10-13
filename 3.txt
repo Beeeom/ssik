@@ -1,0 +1,8 @@
+<%out.println("<h1>Hello</h1>"); %>
+<script type="text/javascript">
+let h1tag=document.createElement("h1")
+h1tag.textContent="안녕"
+document.body.appendChild(h1tag)
+
+		System.out.println("Hello world");
+		response.getWriter().append("<h1>잘가</h1>");
