@@ -1,0 +1,12 @@
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\bin\Debug\HelloMyCSharp03.exe.config
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\bin\Debug\HelloMyCSharp03.exe
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\bin\Debug\HelloMyCSharp03.pdb
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.csproj.AssemblyReference.cache
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.csproj.SuggestedBindingRedirects.cache
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.MainForm.resources
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.SubForm.resources
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.Properties.Resources.resources
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.csproj.GenerateResource.cache
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.csproj.CoreCompileInputs.cache
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.exe
+C:\Users\KB\Documents\c#\HelloMyCSharp03\HelloMyCSharp03\obj\Debug\HelloMyCSharp03.pdb
