@@ -1,0 +1,14 @@
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\bin\Debug\useAPIJson.exe.config
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\bin\Debug\useAPIJson.exe
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\bin\Debug\useAPIJson.pdb
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\bin\Debug\Newtonsoft.Json.dll
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\bin\Debug\Newtonsoft.Json.xml
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.csproj.AssemblyReference.cache
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.csproj.SuggestedBindingRedirects.cache
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.Form1.resources
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.Properties.Resources.resources
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.csproj.GenerateResource.cache
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.csproj.CoreCompileInputs.cache
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.csproj.CopyComplete
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.exe
+C:\Users\KB\Documents\c#\CSharp\CSharp\useAPIJson\useAPIJson\obj\Debug\useAPIJson.pdb
