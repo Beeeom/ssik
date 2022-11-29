@@ -1,0 +1,13 @@
+D:\C#\ParkingCarManager\HelloMyLastCSharp\bin\Debug\HelloMyLastCSharp.exe.config
+D:\C#\ParkingCarManager\HelloMyLastCSharp\bin\Debug\HelloMyLastCSharp.exe
+D:\C#\ParkingCarManager\HelloMyLastCSharp\bin\Debug\HelloMyLastCSharp.pdb
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.csproj.AssemblyReference.cache
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.csproj.SuggestedBindingRedirects.cache
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.Form1.resources
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.Properties.Resources.resources
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.csproj.GenerateResource.cache
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.csproj.CoreCompileInputs.cache
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.exe
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.pdb
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.Form2.resources
+D:\C#\ParkingCarManager\HelloMyLastCSharp\obj\Debug\HelloMyLastCSharp.Form3.resources
